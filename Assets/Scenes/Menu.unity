@@ -629,6 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: 
   playerScore: 0
+  bestScore: 
 --- !u!4 &904883755
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,3 +1431,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 346957639}
+  menuBestScoreText: {fileID: 276233479}

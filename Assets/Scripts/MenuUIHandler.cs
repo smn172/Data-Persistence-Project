@@ -15,11 +15,14 @@ using UnityEditor;
 public class MenuUIHandler : MonoBehaviour
 {
     public InputField input;
+    public Text menuBestScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerData.istance.LoadData();
+        menuBestScoreText.text = PlayerData.istance.bestScore;
+        input.text = PlayerData.istance.playerName;
     }
 
     // Update is called once per frame

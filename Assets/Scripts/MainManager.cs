@@ -26,7 +26,7 @@ public class MainManager : MonoBehaviour
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
 
-        bestScoreText.text = "Best Score: " + PlayerData.istance.playerName + " : " + PlayerData.istance.playerScore;
+        bestScoreText.text = PlayerData.istance.bestScore;
 
         int[] pointCountArray = new [] {1,1,2,2,5,5};
         for (int i = 0; i < LineCount; ++i)
@@ -76,5 +76,14 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
         // In questo punto dovrei salvare il nome del giocatore e il suo punteggio
+        Debug.Log("VALORE SCORE PRIMA DEL SAVE: " + PlayerData.istance.bestPlayerScore);
+
+        if (m_Points > PlayerData.istance.bestPlayerScore)
+        {
+            PlayerData.istance.playerScore = m_Points;
+            PlayerData.istance.bestScore = $"Best Score : {PlayerData.istance.playerName} : {PlayerData.istance.playerScore}";
+            PlayerData.istance.SaveData();
+        }
+        
     }
 }
